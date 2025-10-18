@@ -1,68 +1,27 @@
 // https://codeforces.com/problemset/problem/1181/A
 
-#include "bits/stdc++.h"
-#define int long long
-#define uint unsigned long long
-#define vi vector<int>
-#define vvi vector<vi >
-#define vb vector<bool>
-#define vvb vector<vb >
-#define fr(i,n) for(int i=0; i<(n); i++)
-#define rep(i,a,n) for(int i=(a); i<=(n); i++)
-#define nl cout<<"\n"
-#define dbg(var) cout<<#var<<"="<<var<<" "
-#define all(v) v.begin(),v.end()
-#define sz(v) (int)(v.size())
-#define srt(v)  sort(v.begin(),v.end())         // sort 
-#define mxe(v)  *max_element(v.begin(),v.end())     // find max element in vector
-#define mne(v)  *min_element(v.begin(),v.end())     // find min element in vector
-#define unq(v)  v.resize(distance(v.begin(), unique(v.begin(), v.end())));
-// make sure to sort before applying unique // else only consecutive duplicates would be removed 
-#define bin(x,y)  bitset<y>(x) 
+#include <bits/stdc++.h>
 using namespace std;
-int MOD=1e9+7;      // Hardcoded, directly change from here for functions!
+using int64 = long long;
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int64 x, y, z;
+    if (!(cin >> x >> y >> z)) return 0;
 
+    int64 total = (x + y) / z;
+    int64 separate = x / z + y / z;
 
-void modadd(int &a , int b) {a=((a%MOD)+(b%MOD))%MOD;}
-void modsub(int &a , int b) {a=((a%MOD)-(b%MOD)+MOD)%MOD;}
-void modmul(int &a , int b) {a=((a%MOD)*(b%MOD))%MOD;}
-// ================================== take ip/op like vector,pairs directly!==================================
-template<typename typC,typename typD> istream &operator>>(istream &cin,pair<typC,typD> &a) { return cin>>a.first>>a.second; }
-template<typename typC> istream &operator>>(istream &cin,vector<typC> &a) { for (auto &x:a) cin>>x; return cin; }
-template<typename typC,typename typD> ostream &operator<<(ostream &cout,const pair<typC,typD> &a) { return cout<<a.first<<' '<<a.second; }
-template<typename typC,typename typD> ostream &operator<<(ostream &cout,const vector<pair<typC,typD>> &a) { for (auto &x:a) cout<<x<<'\n'; return cout; }
-template<typename typC> ostream &operator<<(ostream &cout,const vector<typC> &a) { int n=a.size(); if (!n) return cout; cout<<a[0]; for (int i=1; i<n; i++) cout<<' '<<a[i]; return cout; }
-// ===================================END Of the input module ==========================================
-
-
-void solve(){
-    int x, y, z; cin >> x >> y >> z;
-    int a = x/z;
-    int b = y/z;
-    int s = (x+y)/z;
-
-    if(a+b == s) {
-        cout << s << " " << 0 << "\n";
+    if (total == separate) {
+        cout << total << " " << 0 << "\n";
     } else {
-        cout << s << " " << max(x%z, y%z) << endl;
-    }
-    return;
-}
-
-int32_t main()
-{
- 
- ios_base::sync_with_stdio(false);
- cin.tie(NULL);
-
-    int T = 1;
-    // cin >> T;
-    while (T--)
-    {
-        solve();
+        int64 rx = x % z;
+        int64 ry = y % z;
+        int64 need_x = (rx == 0 ? z : z - rx);
+        int64 need_y = (ry == 0 ? z : z - ry);
+        int64 ans_transfer = min(need_x, need_y);
+        cout << total << " " << ans_transfer << "\n";
     }
     return 0;
 }
-
-    
