@@ -1,4 +1,4 @@
-// https://codeforces.com/problemset/problem/1294/A
+//  https://codeforces.com/problemset/problem/1620/B
 
 #include "bits/stdc++.h"
 #define int long long
@@ -36,49 +36,9 @@ template<typename typC> ostream &operator<<(ostream &cout,const vector<typC> &a)
 // ===================================END Of the input module ==========================================
 
 
-// void solve(){
-//     int a, b, c, n; cin >> a >> b >> c >> n;
-//     // yes if polycarp can distribute n coins
-//     // and no otherwise 
-//     // A + B + C == n 
-//     // a + A = b + B = c + C
-//     // k - a + k-b + k-c == n
-//     // 3k - (a+b+c) = n
-//     // 3k = n + (a+b+c)
-//     // k = (n +a + b+ c) / 3
-//     // A = k - a
-//     // B = k - b
-//     // C = k - c
-//     int k =  (n + a + b + c)  / 3 ;
-
-//     int A = k  - a;
-//     int B = k  - b;
-//     int C = k  - c;
-    
-//     if(A + B + C == n) cout << "YES\n";
-//     else cout << "NO\n";
-    
-//     return;
-// }
-
-void solve() {
-    int a, b, c, n;
-    cin >> a >> b >> c >> n;
-
-    int total = a + b + c + n;
-
-    if (total % 3 != 0) { 
-        cout << "NO\n";
-        return;
-    }
-
-    int k = total / 3;
-
-    if (k >= max({a, b, c}))
-        cout << "YES\n";
-    else
-        cout << "NO\n";
-}
+void solve(){
+    int w, h; cin >> w >> h;
+} 
 
 int32_t main()
 {
@@ -86,7 +46,7 @@ int32_t main()
  ios_base::sync_with_stdio(false);
  cin.tie(NULL);
 
-    int T;
+    int T = 1;
     cin >> T;
     while (T--)
     {
