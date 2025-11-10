@@ -104,13 +104,13 @@ void solve()
             continue;
 
         int depart = t;
-        auto vec = cant[u];
+        auto &vec = cant[u];
 
         if (!vec.empty())
         {
             // find first forbidden time >= depart
             auto it = lower_bound(vec.begin(), vec.end(), (int)depart);
-            if(it != vec.end() and *it == depart) {
+            while(it != vec.end() and *it == depart) {
                 ++depart;
                 ++it;
             }
