@@ -3,6 +3,8 @@
     "*.ejs": "html",
     "xiosbase": "cpp",
     "iostream": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp"
   }
 }
