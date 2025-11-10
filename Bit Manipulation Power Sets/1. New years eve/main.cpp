@@ -35,15 +35,15 @@ int main()
     long long n, k;
     cin >> n >> k;
 
-    // Determine the maximum value which is less than or equal to n and has all bits set
-    long long maxValue = 1;
-    while (maxValue <= n)
-    {
-        maxValue <<= 1;
+    if(k == 1) {
+        cout << n << "\n";
+        return 0;
+    } else {
+        int i = 0;
+        while((1LL << i) <= n) {
+            i++;
+        }
+        cout << ((1LL << i) - 1);
     }
-    maxValue -= 1;
-
-    // The maximum XOR value we can get is the max value with all bits set.cout << maxValue << endl;
-
     return 0;
 }
