@@ -61,24 +61,15 @@ void solve()
 {
     string s;
     cin >> s;
-
     int l = s.size();
+    string a(l, '0');
+    a[0] = '1';
     int ans = (l + 1) / 2;
-
-    bool isPowerOf4 = (s[0] == '1');
-    for (int i = 1; i < l; i++)
-    {
-        if (s[i] != '0')
-        {
-            isPowerOf4 = false;
-            break;
-        }
-    }
-
-    // if it is power of 4 and len in odd, reduce 1
-    if (isPowerOf4 && (l % 2 == 1))
+    if (l % 2 && s == a)
         ans--;
-    cout << ans << "\n";
+    if (l == 1)
+        ans = 0;
+    cout << ans;
 }
 
 int32_t main()
@@ -94,3 +85,6 @@ int32_t main()
     }
     return 0;
 }
+
+// ye bhi galat de raha hai TC 6 pe
+// isko fir se karo start se
