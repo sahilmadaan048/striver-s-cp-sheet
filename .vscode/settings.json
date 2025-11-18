@@ -5,6 +5,12 @@
     "iostream": "cpp",
     "xstring": "cpp",
     "unordered_map": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "xutility": "cpp",
+    "deque": "cpp",
+    "initializer_list": "cpp",
+    "list": "cpp",
+    "xhash": "cpp",
+    "xtree": "cpp"
   }
 }
