@@ -43,7 +43,7 @@ int get(int n) {
     }
     return ans;
 }
-
+    
 void solve(){
     int m; cin >> m;
     int n = -1;
